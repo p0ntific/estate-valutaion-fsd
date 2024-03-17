@@ -24,5 +24,9 @@ Front-end приложение для оценки жилой недвижимо
 # Дополнительно
 В проекте не используется Redux. Информация из форм хранится в хранилище Formik. Данные из запросов хранятся с помощью библиотеки React Query. Благодаря библиотеке [найти] данные формик не исчезают при перезагрузки страницы. Для работы с картами ymaps использовалась библиотека [] от []. 
 
+# Тестирование проекта
+Добавлены тесты для функций хелперов. Добавлены тесты для проверки работоспособности запросов.
+
 # Полезные статьи
 - [https://habr.com/ru/companies/elbrusbootcamp/articles/651033/](https://habr.com/ru/companies/elbrusbootcamp/articles/651033/)
+- [https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV](https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV)
