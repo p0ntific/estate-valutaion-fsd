@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Kinomore
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Front-end приложение для оценки жилой недвижимости с помощью ИИ. Сайт: [https://estate-valuation.tech/#/](https://estate-valuation.tech/#/)
 
-Currently, two official plugins are available:
+# Стек технологий:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   React + React Hooks
+-   TypeScript
+-   React Query
+-   tailwind
+-   react-testing-library
+-   Formik, Yup
 
-## Expanding the ESLint configuration
+# Архитектура
+Веб-приложение разработано по методолгии FSD. Преимущства этого подхода (взято с официального сайта: https://feature-sliced.design/ru/docs/get-started/overview):
+-   Единообразие.Код распределяется согласно области влияния (слой), предметной области (слайс) и техническому назначению (сегмент). Благодаря этому архитектура стандартизируется и становится более простой для ознакомления.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-   Контролируемое переиспользование логики. Каждый компонент архитектуры имеет свое назначение и предсказуемый список зависимостей. Благодаря этому сохраняется баланс между соблюдением принципа DRY и возможностью адаптировать модуль под разные цели.
 
-- Configure the top-level `parserOptions` property like this:
+-   Устойчивость к изменениям и рефакторингу. Один модуль не может использовать другой модуль, расположенный на том же слое или на слоях выше. Благодаря этому приложение можно изолированно модифицировать под новые требования без непредвиденных последствий.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+-   Ориентированность на потребности бизнеса и пользователей. Разбиение приложения по бизнес-доменам помогает глубже понимать, структурировать и находить фичи проекта.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+# Дополнительно
+В проекте не используется Redux. Информация из форм хранится в хранилище Formik. Данные из запросов хранятся с помощью библиотеки React Query. Благодаря библиотеке [найти] данные формик не исчезают при перезагрузки страницы. Для работы с картами ymaps использовалась библиотека [] от []. 
+
+# Тестирование проекта
+Добавлены тесты для функций хелперов. Добавлены тесты для проверки работоспособности запросов.
+
+# Полезные статьи
+- [https://habr.com/ru/companies/elbrusbootcamp/articles/651033/](https://habr.com/ru/companies/elbrusbootcamp/articles/651033/)
+- [https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV](https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV)
