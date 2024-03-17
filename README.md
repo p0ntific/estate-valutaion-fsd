@@ -1,6 +1,6 @@
 # Kinomore
 
-Front-end приложение для оценки жилой недвижимости с помощью ИИ. Сайт: [https://kinomore.netlify.com/](https://kinomore.netlify.com/)
+Front-end приложение для оценки жилой недвижимости с помощью ИИ. Сайт: [https://estate-valuation.tech/#/](https://estate-valuation.tech/#/)
 
 # Стек технологий:
 
