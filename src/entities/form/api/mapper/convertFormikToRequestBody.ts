@@ -1,10 +1,10 @@
-import { FormValuesWithRenovationType } from "../../model/formValuesWithRenovation";
+import { FormValuesWithRenovationType } from "../../model/valuesTypes";
 import { GetPriceDto } from "../dto/getPrice.dto";
 import { getHouseMaterial } from "./getHouseMaterial";
 import { getParkingType } from "./getParkingType";
 import { getRepair } from "./getRepair";
 
-export default function convertFormikToRequestBody(
+export function convertFormikToRequestBody(
     values: FormValuesWithRenovationType
 ): GetPriceDto {
     return {
@@ -12,7 +12,7 @@ export default function convertFormikToRequestBody(
         area: +values.square.replace(/\D/g, ""),
         cnt_rooms: +values.rooms.replace(/\D/g, ""),
         floor: +values.floor.replace(/\D/g, ""),
-        has_lift: +values.hasLift,
+        has_lift: values.hasLift ? 1 : 0,
         house_material: getHouseMaterial(values.houseType),
         object_type: values.roofType.toLowerCase() === "первичка" ? 1 : 2,
         parking_type: getParkingType({

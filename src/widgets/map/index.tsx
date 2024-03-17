@@ -8,7 +8,7 @@ import { Field, Formik } from "formik";
 import { memo, useMemo, useState } from "react";
 import ObjectChip, { Variant } from "./ui/ObjectChip";
 import SimilarHouseChip from "./ui/SimilarHouseChip";
-import animateScroll from "react-scroll";
+import { animateScroll } from "react-scroll";
 import { MapStatusType } from "@/entities/form/model/mapStatusType";
 import { Form } from "react-router-dom";
 import DropdownInput from "@/shared/ui/DropdownInput";
@@ -21,7 +21,9 @@ const MapComponent = memo(() => {
     ];
     const houseCenter = JSON.parse(localStorage.getItem("positionOnMap"));
     const houseInfo = JSON.parse(localStorage.getItem("houseInfo"));
-    const infrastructureData = JSON.parse(localStorage.getItem("infrastucture"));
+    const infrastructureData = JSON.parse(
+        localStorage.getItem("infrastucture")
+    );
     const similarHouses = JSON.parse(localStorage.getItem("similar_objects"));
     const similarHousesPositions = similarHouses.map(
         (el: { position: number[]; address: string }) => ({
@@ -225,7 +227,19 @@ const MapComponent = memo(() => {
                                         </label>
                                     ))}
                                     <div className="text-center w-full md:hidden">
-                                    <DropdownInput className="w-full" onClick={(variant:string)=>{setFieldValue("mapStatus", variant) }} placeholder={"О доме"} items={radioVariants}>Фильтр</DropdownInput>
+                                        <DropdownInput
+                                            className="w-full"
+                                            onClick={(variant: string) => {
+                                                setFieldValue(
+                                                    "mapStatus",
+                                                    variant
+                                                );
+                                            }}
+                                            placeholder={"О доме"}
+                                            items={radioVariants}
+                                        >
+                                            Фильтр
+                                        </DropdownInput>
                                     </div>
                                 </div>
                                 <div className="w-full lg:w-[28rem] text-center">
@@ -240,7 +254,7 @@ const MapComponent = memo(() => {
                             </div>
 
                             <div className="w-full lg:flex-row flex-col flex gap-6">
-                                <div className="w-full md:max-h-full lg:h-[20rem] h-[24rem] rounded-xl overflow-hidden">
+                                <div className="lg:w-2/3 md:max-h-full lg:h-[20rem] h-[24rem] rounded-xl overflow-hidden">
                                     <YMap
                                         location={{
                                             zoom: zoom,
@@ -266,7 +280,7 @@ const MapComponent = memo(() => {
                                 </div>
                                 <div className="w-full lg:w-[28rem] flex flex-col gap-8 ">
                                     {mapStatus === "Инфраструктура" ? (
-                                        <div className=" gap-2 flex md:gap-4 flex-wrap">
+                                        <div className="w-full gap-2 flex md:gap-4 flex-wrap">
                                             {infrastucture.map(
                                                 ({ name, positions }) => (
                                                     <ObjectChip

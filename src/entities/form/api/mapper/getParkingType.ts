@@ -1,14 +1,10 @@
-export type Parkings = {
-    parkingOnRoof: boolean;
-    parkingOnGround: boolean;
-    parkingUnderGround: boolean;
-};
+import { ParkingsType, ParkingsTypeReversed } from "../../model/valuesTypes";
 
 export function getParkingType({
     parkingOnRoof,
     parkingOnGround,
     parkingUnderGround,
-}: Parkings) {
+}: ParkingsType): ParkingsTypeReversed {
     //orf - на крыше, grn - на земле, und - под землей, mlt - многоуровневая, 0 - нету
     if (!parkingOnRoof && !parkingOnGround && !parkingUnderGround) return "0";
     if (+parkingOnGround + +parkingOnRoof + +parkingUnderGround >= 2)

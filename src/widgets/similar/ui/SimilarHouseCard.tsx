@@ -20,23 +20,25 @@ function SimilarHouseCard(props: HouseType) {
                     </span>
                 </div>
             </div>
-            <div className="collapse-content">
-                <div className="w-full flex md:flex-row flex-col gap-4 md:h-64">
-                    <div className="md:w-2/3 h-64 md:h-full rounded-xl overflow-hidden">
+            <div className="collapse-content w-full">
+                <div className="w-full flex md:flex-row flex-col gap-6 md:h-64">
+                    <div className="md:w-7/12 h-64 md:h-full rounded-xl overflow-hidden">
                         <SimilarHouseMap {...props} />
                     </div>
-                    <div className="md:w-1/3 flex flex-col gap-2">
-                        {interestingInfo.map((el, id) => (
-                            <div
-                                className="font-bold prose-md"
-                                key={id + "similarHouseCardInfo"}
-                            >
-                                {el.text}:{" "}
-                                <span className="font-medium">
-                                    {el.value ? el.value : "неизвестно"}
-                                </span>
-                            </div>
-                        ))}
+                    <div className="md:w-5/12 w-full">
+                        <div className=" flex flex-col gap-2">
+                            {interestingInfo.map((el, id) => (
+                                <div
+                                    className="font-bold prose-md"
+                                    key={id + "similarHouseCardInfo"}
+                                >
+                                    {el.text}:{" "}
+                                    <span className="font-medium">
+                                        {el.value ? el.value : "неизвестно"}
+                                    </span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>

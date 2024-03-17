@@ -1,4 +1,3 @@
-
 interface Props {
     address: string;
     cost: number;
@@ -12,11 +11,9 @@ function SimilarHouseChip({ address, cost, onClick }: Props) {
             data-tip={`${address} \n Нажмите чтобы перейти.`}
             onClick={onClick}
         >
-            <div className="py-2 px-2 w-full gap-2 btn btn-ghost ">
-                <div className="flex flex-col">
-                    <h2 className="text-sm font-bold">
-                        {address.slice(0, 35)}
-                    </h2>
+            <div className="py-2 px-2 h-full w-full gap-2 btn btn-ghost ">
+                <div className="flex flex-col overflow-hidden">
+                    <h2 className="text-sm font-bold text-nowrap">{address}</h2>
                     <span className="text-xs text-neutral-400">
                         {cost / 1000000} млн.р
                     </span>

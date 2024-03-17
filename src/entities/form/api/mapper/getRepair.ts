@@ -1,8 +1,12 @@
-type RenovationInfo = {
-    text: string;
-    value: string;
-};
+import {
+    RenovationsType,
+    RenovationsTypeReversed,
+} from "../../model/valuesTypes";
 
+interface RenovationInfo {
+    text: RenovationsType;
+    value: RenovationsTypeReversed;
+}
 export const renovationTypes: RenovationInfo[] = [
     { text: "С ремонтом и мебелью дизайнерский ремонт", value: "3;2" },
     { text: "С ремонтом и мебелью евроремонт", value: "2;2" },
@@ -17,7 +21,9 @@ export const renovationTypes: RenovationInfo[] = [
     { text: "Без ремонта черновая отделка", value: "0;0" },
 ];
 
-export function getRepair(renovation: string): string {
+export function getRepair(
+    renovation: RenovationsType
+): RenovationsTypeReversed {
     const ans = renovationTypes.find((el) => el.text === renovation)?.value;
     if (ans) return ans;
     return "0;0";

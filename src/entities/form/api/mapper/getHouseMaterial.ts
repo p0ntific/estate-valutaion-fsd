@@ -1,3 +1,8 @@
+import {
+    HouseMaterialType,
+    HouseMaterialTypeReversed,
+} from "../../model/valuesTypes";
+
 export const houseMaterials = {
     кирпичный: "brc",
     блочный: "blc",
@@ -8,6 +13,10 @@ export const houseMaterials = {
     "кирпично-монолитный": "brm",
 };
 
-export function getHouseMaterial(houseMaterial: string): string {
-    return houseMaterials[houseMaterial.toLowerCase()];
+export function getHouseMaterial(
+    houseMaterial: HouseMaterialType
+): HouseMaterialTypeReversed {
+    return houseMaterials[houseMaterial.toLowerCase()]
+        ? houseMaterials[houseMaterial.toLowerCase()]
+        : "brc";
 }

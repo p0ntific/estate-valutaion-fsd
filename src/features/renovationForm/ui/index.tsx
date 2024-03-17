@@ -4,7 +4,7 @@ import RenovationInputImgs from "./RenovationInputImgs";
 import RenovationModal from "./RenovationModal";
 import AlertComponent from "@/shared/ui/AlertComponent";
 import { useGetRenovationType } from "../api/useGetRenovationType";
-import getRenovationTypeFromResponse from "@/entities/form/api/mapper/getRenovationTypeFromResponse";
+import { getRenovationTypeFromResponse } from "@/entities/form/api/mapper/getRenovationTypeFromResponse";
 
 type Props = {
     className: string;
