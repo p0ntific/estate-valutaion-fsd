@@ -1,6 +1,6 @@
 # Kinomore
 
-Front-end приложение для оценки жилой недвижимости с помощью ИИ. Сайт: [[https://kinomore.netlify.com/](https://kinomore.netlify.com/)](https://estate-valuation.tech/)
+Front-end приложение для оценки жилой недвижимости с помощью ИИ. Сайт: [https://kinomore.netlify.com/](https://kinomore.netlify.com/)
 
 # Стек технологий:
 
@@ -10,3 +10,6 @@ Front-end приложение для оценки жилой недвижимо
 -   tailwind
 -   react-testing-library
 -   Formik, Yup
+
+# Полезные статьи
+- [https://habr.com/ru/companies/elbrusbootcamp/articles/651033/](https://habr.com/ru/companies/elbrusbootcamp/articles/651033/)
