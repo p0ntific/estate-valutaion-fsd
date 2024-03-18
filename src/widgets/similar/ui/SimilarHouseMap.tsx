@@ -1,4 +1,4 @@
-import { HouseType } from "@/entities/houses/module/houseType";
+import { HouseType } from "@/entities/form/model/houseType.ts";
 import {
     YMap,
     YMapDefaultFeaturesLayer,
