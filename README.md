@@ -31,3 +31,4 @@ Unit тесты функций хелперов. Для запуска:
 # Полезные статьи
 - [https://habr.com/ru/companies/elbrusbootcamp/articles/651033/](https://habr.com/ru/companies/elbrusbootcamp/articles/651033/)
 - [https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV](https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV)
+- [https://feature-sliced.design/ru/docs/get-started/overview](https://feature-sliced.design/ru/docs/get-started/overview)
