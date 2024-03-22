@@ -16,7 +16,7 @@ import {
   MapStatusType,
   PlacemarkType,
 } from "@/entities/map/model/mapTypes.ts";
-import { InfrastuctureListType } from "@/entities/map/model/infrastructureTypes.ts";
+import { InfrastructureListType } from "@/entities/map/model/infrastructureTypes.ts";
 import {
   SimilarObjectsInfoType,
   SimilarObjectsType,
@@ -30,7 +30,7 @@ import InfrastructureChips from "@/widgets/map/ui/InfrastructureChips.tsx";
 interface Props {
   houseCenter: CoordinatesType;
   houseInfo: HouseInfoType;
-  infrastructure: InfrastuctureListType;
+  infrastructure: InfrastructureListType;
   similarObjects: SimilarObjectsType[];
 }
 
@@ -41,21 +41,18 @@ const MapComponent = memo(
       similarObjects,
       infrastructure,
     });
-
-    const radioVariants: MapStatusType[] = [
-      "О доме",
-      "Похожие дома",
-      "Инфраструктура",
-    ];
-
+    const radioVariants: MapStatusType[] = ["О доме"];
+    if (positions["Похожие дома"]?.length) radioVariants.push("Похожие дома");
+    if (positions["Инфраструктура"]?.length)
+      radioVariants.push("Инфраструктура");
     const [center, setCenter] = useState(houseCenter);
-    const [zoom, setZoom] = useState(9);
+    const [zoom, setZoom] = useState(14);
     const [counter, setCounter] = useState(0);
 
     const similarHousesMinInfo = getSimilarObjectsInfo(similarObjects);
 
     const handleClickInfrastructure = (positions: CoordinatesType[]) => {
-      setZoom(14);
+      setZoom(16);
       if (positions.length === 0) return;
       setCounter((prev: number) => (prev + 1) % positions.length);
       const local_counter = (counter + 1) % positions.length;
@@ -68,7 +65,7 @@ const MapComponent = memo(
     };
 
     const setPosition = (mapStatus: MapStatusType) => {
-      setZoom(11);
+      setZoom(15);
       if (positions[mapStatus][0].position)
         setCenter(positions[mapStatus][0].position);
       return [0, 0];
@@ -156,7 +153,7 @@ const MapComponent = memo(
                       }
                     </YMap>
                   </div>
-                  <div className="w-full lg:w-[22rem] xl:w-[28rem] flex flex-col gap-8 ">
+                  <div className="w-full lg:max-w-[24rem]  flex flex-col gap-8 ">
                     {mapStatus === "Инфраструктура" ? (
                       <InfrastructureChips
                         handleClickInfrastructure={handleClickInfrastructure}

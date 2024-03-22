@@ -52,7 +52,7 @@ function ConfirmLeave() {
                                 onClick={() => {
                                     localStorage.removeItem("token");
                                     setTimeout(() => navigate("/about"), 1);
-                                    setTimeout(() => navigate("/"), 1);
+                                    setTimeout(() => navigate("/"), 2);
                                 }}
                             >
                                 Да

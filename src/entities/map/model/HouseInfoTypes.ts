@@ -1,6 +1,6 @@
 export interface HouseInfoType {
-  year?: number;
-  count_entrances?: number;
-  gas?: string;
-  hot_water?: string;
+  year?: number | null;
+  count_entrances?: number | null;
+  gas?: string | null;
+  hot_water?: string | null;
 }

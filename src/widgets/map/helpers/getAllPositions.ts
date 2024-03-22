@@ -5,13 +5,13 @@ import {
 } from "@/entities/map/model/mapTypes.ts";
 import {
   InfrastructureItemType,
-  InfrastuctureListType,
+  InfrastructureListType,
 } from "@/entities/map/model/infrastructureTypes.ts";
 import { SimilarObjectsType } from "@/features/similarObjects/model/similarObjectsTypes.ts";
 
 interface Positions {
   houseCenter: CoordinatesType;
-  infrastructure: InfrastuctureListType;
+  infrastructure: InfrastructureListType;
   similarObjects: SimilarObjectsType[];
 }
 
@@ -19,20 +19,20 @@ function getSimilarObjectsPositions(
   similarObjects: SimilarObjectsType[],
 ): PlacemarkType[] {
   return similarObjects.map((el) => ({
-    position: el?.position,
+    position: [el?.longitude, el?.latitude],
     text: el?.address,
   }));
 }
 function getAllInfrastructurePositions(
-  infrastructure: InfrastuctureListType,
+  infrastructure: InfrastructureListType,
 ): PlacemarkType[] {
   const positions: PlacemarkType[] = [];
-  for (let key in infrastructure) {
+  for (const key in infrastructure) {
     // @ts-ignore
     infrastructure[key].items.forEach((el: InfrastructureItemType) =>
       positions.push({
         text: el.name,
-        position: el.point,
+        position: [el.point[1], el.point[0]],
       }),
     );
   }

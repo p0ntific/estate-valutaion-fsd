@@ -8,14 +8,14 @@ export interface InfrastructureType {
   count: number;
   items: InfrastructureItemType[];
 }
-export interface InfrastuctureListType {
-  "продуктовый магазин": InfrastructureType;
-  достопримечательность: InfrastructureType;
-  кафе: InfrastructureType;
-  "детский сад": InfrastructureType;
-  школа: InfrastructureType;
-  "фитнес-клуб": InfrastructureType;
-  поликлиника: InfrastructureType;
-  тц: InfrastructureType;
-  кинотеатр: InfrastructureType;
+export interface InfrastructureListType {
+  grocery_stores?: InfrastructureType;
+  landmarks?: InfrastructureType;
+  cafes?: InfrastructureType;
+  kindergartens?: InfrastructureType;
+  schools?: InfrastructureType;
+  fitness_clubs?: InfrastructureType;
+  polyclinics?: InfrastructureType;
+  shopping_malls?: InfrastructureType;
+  cinemas?: InfrastructureType;
 }

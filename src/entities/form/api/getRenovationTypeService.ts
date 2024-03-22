@@ -10,7 +10,11 @@ class getRenovationTypeService {
             imagesData.append("photos", element, element.path);
         });
 
-        return axios.post(`${API_URL}property/calculate_repair/`, imagesData);
+        return axios.post(`${API_URL}calculate_repair/`, imagesData,{
+            headers: {
+                Authorization: "Token " + localStorage.getItem("token"),
+            },
+        });
     }
 }
 

@@ -1,22 +1,24 @@
 import {
-    HouseMaterialType,
-    HouseMaterialTypeReversed,
+  HouseMaterialType,
+  HouseMaterialTypeReversed,
 } from "../../model/valuesTypes";
 
 export const houseMaterials = {
-    кирпичный: "brc",
-    блочный: "blc",
-    монолитный: "mnl",
-    панельный: "pnl",
-    деревянный: "wdn",
-    сталинский: "stl",
-    "кирпично-монолитный": "brm",
+  кирпичный: "brc",
+  блочный: "blc",
+  монолитный: "mnl",
+  панельный: "pnl",
+  деревянный: "wdn",
+  сталинский: "stl",
+  "кирпично-монолитный": "brm",
 };
 
 export function getHouseMaterial(
-    houseMaterial: HouseMaterialType
+  houseMaterial: HouseMaterialType,
 ): HouseMaterialTypeReversed {
-    return houseMaterials[houseMaterial.toLowerCase()]
-        ? houseMaterials[houseMaterial.toLowerCase()]
-        : "brc";
+  // @ts-ignore
+  return houseMaterials[houseMaterial.toLowerCase()]
+    ? // @ts-ignore
+      houseMaterials[houseMaterial.toLowerCase()]
+    : "brc";
 }

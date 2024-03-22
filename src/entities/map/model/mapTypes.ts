@@ -5,15 +5,15 @@ export interface PlacemarkType {
 }
 
 export type Variant =
-  | "продуктовый магазин"
-  | "достопримечательность"
-  | "кафе"
-  | "детский сад"
-  | "школа"
-  | "фитнес-клуб"
-  | "поликлиника"
-  | "тц"
-  | "кинотеатр";
+  | "grocery_stores"
+  | "landmarks"
+  | "cafes"
+  | "kindergartens"
+  | "schools"
+  | "fitness_clubs"
+  | "polyclinics"
+  | "shopping_malls"
+  | "cinemas";
 export type MapStatusType = "О доме" | "Похожие дома" | "Инфраструктура";
 
 export interface allPositionsType {

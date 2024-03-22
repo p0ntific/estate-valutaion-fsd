@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
-import { LoginDto } from "../model/login.dto";
-import loginService from "./loginService";
+import { LoginDto } from "@/entities/login/model/login.dto.ts";
+import loginService from "./loginService.ts";
 
 export const useLogin = () =>
     useMutation({

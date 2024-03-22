@@ -1,5 +1,5 @@
-import { useLogin } from "@/features/login/api/useLogin";
-import { LoginDto } from "@/features/login/model/login.dto";
+import { useLogin } from "@/entities/login/api/useLogin";
+import { LoginDto } from "@/entities/login/model/login.dto";
 import AlertComponent from "@/shared/ui/AlertComponent";
 import TextInput from "@/shared/ui/TextInput";
 import { Formik } from "formik";

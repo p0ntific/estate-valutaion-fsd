@@ -7,7 +7,7 @@ function SimilarHouseCard(props: SimilarObjectsType) {
     { value: props.area, text: "Площадь" },
     { value: props.floor, text: "Этаж" },
     { value: props.floors, text: "Всего этажей" },
-    { value: props.text, text: "Описание" },
+    { value: props.year, text: "Год строительства" },
   ];
   return (
     <div className="collapse bg-blue-50 sm:px-4">
