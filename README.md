@@ -1,4 +1,4 @@
-# Kinomore
+# Estate valuation
 
 Front-end приложение для оценки жилой недвижимости с помощью ИИ. Сайт: [https://estate-valuation.tech/#/](https://estate-valuation.tech/#/)
 
@@ -8,7 +8,7 @@ Front-end приложение для оценки жилой недвижимо
 -   TypeScript
 -   React Query
 -   tailwind
--   react-testing-library
+-   jest/vitest
 -   Formik, Yup
 
 # Архитектура
@@ -25,8 +25,10 @@ Front-end приложение для оценки жилой недвижимо
 В проекте не используется Redux. Информация из форм хранится в хранилище Formik. Данные из запросов хранятся с помощью библиотеки React Query. Благодаря библиотеке [найти] данные формик не исчезают при перезагрузки страницы. Для работы с картами ymaps использовалась библиотека [] от []. 
 
 # Тестирование проекта
-Добавлены тесты для функций хелперов. Добавлены тесты для проверки работоспособности запросов.
+Unit тесты функций хелперов. Для запуска:
+`npm run test`
 
 # Полезные статьи
 - [https://habr.com/ru/companies/elbrusbootcamp/articles/651033/](https://habr.com/ru/companies/elbrusbootcamp/articles/651033/)
 - [https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV](https://www.youtube.com/watch?v=y2emL1fMRyY&ab_channel=UlbiTV)
+- [https://feature-sliced.design/ru/docs/get-started/overview](https://feature-sliced.design/ru/docs/get-started/overview)
