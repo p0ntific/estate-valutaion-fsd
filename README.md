@@ -13,10 +13,11 @@ Front-end приложение для оценки жилой недвижимо
 -   formik, Yup.
 
 # Запуск приложения
-Для тестирования приложения данные были замоканы с помощью библиотеки `axios-mock-adapter` в файле tests/MockApi.ts. Для отключения удалить из файла app/main.tsx строку `MockAPI.initializeMocks();`
 1. Установить Docker, запустить Docker engine.
 2. `docker build -t react-app -f Dockerfile.dev .`
 3. `docker run -p "3000:3000" react-app run dev`
+   
+Для тестирования приложения данные были замоканы с помощью библиотеки `axios-mock-adapter` в файле tests/MockApi.ts. Для отключения удалить из файла app/main.tsx строку `MockAPI.initializeMocks();`
 
 # Архитектура
 Веб-приложение разработано по методолгии FSD. Преимущства этого подхода (взято с официального сайта: https://feature-sliced.design/ru/docs/get-started/overview):
