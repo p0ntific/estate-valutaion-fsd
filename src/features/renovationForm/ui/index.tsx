@@ -31,7 +31,7 @@ function RenovationForm({
   const getRenovationType = (imgs: ImgType[]) => {
     setAlertIsShowing(false);
     const imgsOnly = imgs.map((el) => el.img);
-    mutate({ images: imgsOnly });
+    if (imgsOnly.length > 0) mutate({ images: imgsOnly });
   };
 
   useEffect(() => {

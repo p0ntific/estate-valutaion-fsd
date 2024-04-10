@@ -9,7 +9,8 @@ type Props = {
 };
 
 const Navbar = memo(({ resultIsReady, userIsLoggedIn }: Props) => {
-  const { data } = useGetMe();
+  const { data, isPending } = useGetMe();
+  console.log(data, 1);
   const name = data?.data[0]?.username;
   const email = data?.data[0]?.email;
   let links = [
@@ -76,12 +77,16 @@ const Navbar = memo(({ resultIsReady, userIsLoggedIn }: Props) => {
           <>
             <div className="dropdown dropdown-end">
               <div tabIndex={0} role="button" className="btn btn-ghost ">
-                <div className="flex flex-col gap-1">
-                  {name ? name : "Гость"}
-                  <span className="text-[10px] prose-gray">
-                    {email ? email : ""}
-                  </span>
-                </div>
+                {isPending ? (
+                  <div className="loading"></div>
+                ) : (
+                  <div className="flex flex-col gap-1">
+                    {name ? name : "Гость"}
+                    <span className="text-[10px] prose-gray">
+                      {email ? email : ""}
+                    </span>
+                  </div>
+                )}
               </div>
               <ul
                 tabIndex={0}

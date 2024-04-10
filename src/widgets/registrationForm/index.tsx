@@ -1,9 +1,9 @@
 import { useRegistration } from "@/entities/login/api/useRegistration";
 import AlertComponent from "@/shared/ui/AlertComponent";
 import TextInput from "@/shared/ui/TextInput";
-import { Formik } from "formik";
+import { Form, Formik } from "formik";
 import { memo, useEffect, useRef, useState } from "react";
-import { Form, NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import Captcha from "reaptcha";
 import YupPassword from "yup-password";
@@ -116,9 +116,9 @@ const RegistrationForm = memo(() => {
       <Formik
         initialValues={initialValues}
         validationSchema={validationsSchema}
-        onSubmit={() => {}}
+        onSubmit={(values) => submitLogin(values)}
       >
-        {({ values, errors, touched }) => {
+        {({ errors, touched }) => {
           return (
             <Form className="flex flex-col gap-2 w-full max-w-2xl text-center border bg-blue-50 border-blue-500 rounded-xl py-12 px-4 sm:px-12">
               <h1 className="prose-2xl font-bold mb-4">Регистрация</h1>
@@ -257,7 +257,7 @@ const RegistrationForm = memo(() => {
                 />
               </div>
               <button
-                onClick={() => submitLogin(values)}
+                type="submit"
                 className={`btn mt-6 text-white bg-blue-500 border-0 btn-neutral`}
               >
                 {isPending ? (

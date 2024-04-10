@@ -23,6 +23,7 @@ function Main({ setData }: Props) {
     }
   }, [isError, isSuccess, data]);
   useEffect(() => {
+    console.log(data);
     if (!isPending && isSuccess && data) {
       setData(data.data as AiResultType);
     }
